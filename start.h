@@ -13,4 +13,5 @@ static void exit(int code) {
 void _start() {
 	int ret = main();
 	exit(ret);
+	__builtin_unreachable();
 }
