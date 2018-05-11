@@ -1,0 +1,11 @@
+FOO_1.0 {
+	global:
+		foo;
+	local:
+		*;
+};
+
+FOO_2.0 {
+	global:
+		foo;
+} FOO_1.0;

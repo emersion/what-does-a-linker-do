@@ -1,0 +1,21 @@
+# PIE executable
+movl   foo@GOT(%ebx), %eax
+pushl  (%eax)
+call   bar@PLT # First time, jump to `PLT1`
+
+# Procedure Linkage Table
+.PLT0:pushl 4(%ebx)
+	jmp *8(%ebx) # First time, jump to the dynamic linker
+	# The dynamic linker will then compute the address for `bar` and store it at
+	# `name1@GOT(%ebx)`
+	# (On non-IA32 architectures, the PLT is modified directly)
+	nop; nop
+	nop; nop
+.PLT1:jmp *name1@GOT(%ebx)
+	pushl $offset1
+	jmp .PLT0@PC
+.PLT2:jmp *name2@GOT(%ebx)
+	pushl $offset2
+	jmp .PLT0@PC
+
+# Global Offset Table

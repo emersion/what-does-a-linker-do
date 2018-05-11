@@ -1,0 +1,7 @@
+ABI stability
+=============
+
+* Don't remove functions
+* Don't change parameters
+* Variables are frozen
+* Only the documented interface matters (changing undefined behaviour is fine)
