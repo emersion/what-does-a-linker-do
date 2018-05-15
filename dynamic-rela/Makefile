@@ -1,5 +1,3 @@
-CFLAGS = -nostdlib -fno-asynchronous-unwind-tables
-
 include ../common.mk
 
 all: main inspect
