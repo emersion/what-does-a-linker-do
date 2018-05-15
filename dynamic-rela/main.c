@@ -1,6 +1,7 @@
-#include "foo.h"
+#include "../start.h"
 
-void _start() {
-	int ret = foo();
-	asm("int $0x80"::"a"(1), "b"(ret)); // exit(ret)
+int foo(void);
+
+int main(int argc, char *argv[]) {
+	return foo();
 }
