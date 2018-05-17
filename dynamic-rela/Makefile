@@ -7,7 +7,7 @@ libfoo.so: foo.o
 
 main: main.o libfoo.so
 	# TODO: -dynamic-linker shouldn't be needed
-	$(LD) $(LDFLAGS) -dynamic-linker /lib64/ld-linux-x86-64.so.2 -L. -lfoo -o $@ $<
+	$(LD) $(LDFLAGS) -dynamic-linker /lib64/ld-linux-x86-64.so.* -L. -lfoo -o $@ $<
 
 .PHONY: inspect
 inspect:
