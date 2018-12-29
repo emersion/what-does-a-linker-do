@@ -16,7 +16,7 @@ A collection of small examples demonstrating various linker features.
 * Run path: specify shared libraries paths directly in the executable
 * Static relocation: link at compile-time a symbol from a static library
 * String suffix merge: optimization when multiple strings have the same suffix
-* Versioning: build a shared library with versionned symbols
+* Versioning: build a shared library with versioned symbols
 * Visibility archive: set symbol visibility when building an archive
 * Visibility attributes: make symbols local or global with attributes
 
